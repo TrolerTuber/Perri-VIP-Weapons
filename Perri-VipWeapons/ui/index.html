@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+    <div class="container" style="display: none;">
+        <div class="title">VIP WEAPONS PANEL</div> 
+        <div class="subtitle">The best VIP Weapon script for FiveM</div>  
+
+        <div class="search-section">
+            <input type="text" id="player-id" placeholder="Player ID" />
+            <button onclick="searchPlayer()">Search</button>
+        </div>
+            
+
+        <div class="weapon-list-section">
+<!--              <div class="weapon-card">
+                <div id="wn weaponName">WEAPON_PISTOL</div>
+                <button class="remove weaponName">Remove</button>
+            </div>  -->
+        </div>
+        
+        <div class="give-weapon-section">
+            <div class="give-weapon">
+            <select id="weapon-select">
+                <!-- <option value="WEAPON_PISTOL">Pistol</option> -->
+            </select>
+            <input type="number" id="playerId" placeholder="Player ID" />
+            <button onclick="giveWeapon()">Give Weapon</button>
+      </div>    
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,194 @@
+
+
+.container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0a0a0a;
+  width: 40%;
+  height: 40%;
+  transform: translate(-50%, -50%);
+  border-radius: .4vw;
+  box-shadow: 0 0 .3vw black;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  margin-top: .8vw;
+  font-family: sans-serif;
+  font-size: 1.2vw;
+  background-color: black;
+  font-weight: 600;
+  color: white;
+  background: -webkit-linear-gradient(left, #098fe99d, #30B3E3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.subtitle {
+  margin-top: .4vw;
+  font-size: .9vw;
+  background-color: black;
+  font-weight: 600;
+  color: white;
+  background: -webkit-linear-gradient(left, #ccc, gray);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+.search-section {
+  display: flex;
+  flex-direction: row;
+  gap: .4vw;
+  align-items: left;
+  justify-content: left;
+  text-align: left;    
+  margin-top: 1.6vw;
+}
+
+.search-section > input {
+  background: #222;
+  width: 30vw;
+  height: 1vw;
+  padding: .3vw;
+  border: none;
+  border-radius: .4vw;
+  color: #ccc;
+  font-size: .8vw;
+
+}
+
+.search-section > button {
+  padding: .3vw .4vw;
+  background: #30B3E3;
+  border: none;
+  font-size: .8vw;
+  border-radius: .4vw;
+  color: white;
+  cursor: pointer;
+}
+
+.content {
+  overflow: scroll; 
+  scrollbar-width: none;  
+  -ms-overflow-style: none; 
+}
+
+.content::-webkit-scrollbar {
+    display: none; 
+}
+
+
+.weapon-list-section  {
+  width: 50%;
+  height: 50%;
+  margin-right: 14.3vw;;
+  background: #1c1c1c;
+  margin-top: 1vw;
+  border-radius: 5px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5vw;
+  overflow-y: scroll;
+}
+
+.weapon-list-section::-webkit-scrollbar {
+  width: .4vw;
+}
+
+.weapon-list-section::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.weapon-list-section::-webkit-scrollbar-thumb {
+  background-color: #555; 
+  border-radius: .5vw;
+}
+
+.weapon-card {
+  display: flex;
+  justify-content: space-between;
+  background: #2c2c2c;
+  padding: .5vw;
+  border-radius: .4vw;
+
+  width: 95%;
+  height: .8vw;
+  font-size: .6vw;
+}
+
+
+
+.remove {
+  background: #d60f0f8c;
+  border: none;
+  width: auto;
+  height: 1vw;
+  font-size: .5vw;
+  text-align: center;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+#wn {
+  background: #2c2c2c;
+  
+}  
+
+.give-weapon-section {
+  position: absolute;
+  width: 33%;
+  height: auto;
+  bottom: 29%;
+  left: 60%;
+  margin-right: 14.3vw;;
+  margin-top: 1vw;
+  border-radius: .25vw;
+
+
+  align-items: center;
+  color: white;
+
+  font-size: .8vw;
+
+}
+
+option {
+  background: #2c2c2c;
+  border: solid gray .1px;
+  font-size: .7vw;
+}
+
+.give-weapon {
+  display: flex;
+  flex-direction: column;
+  gap: .3vw;
+}
+
+.give-weapon > select,
+.give-weapon > input {
+  padding: .5vw;
+  border: none;
+  border-radius: .4vw;
+  background: #222;
+  color: white;
+}
+
+.give-weapon button {
+  padding: .5vw;
+  background: #81c784;
+  border: none;
+  border-radius: .4vw;
+  cursor: pointer;
+  color: white;
+
+}
