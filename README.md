@@ -33,5 +33,8 @@ In your `server.cfg`, add the following:
 #### ✅ For all admins (group-based):
 ```cfg
 add_ace group.admin "Perri-VipWeapons" allow
-or
-add_principal identifier.discord:discordID "Perri-VipWeapons"
+```
+
+## ⛑️ Support Discord
+
+[Link](https://discord.com/invite/2Dhdchh6d2)
