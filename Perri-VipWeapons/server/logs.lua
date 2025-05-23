@@ -1,8 +1,5 @@
 local webhook = ''
 
-
-
-
 -- Don't touch, only change the webhook
 function sendToDiscord(color, name, message, footer)
     local xPlayer = ESX.GetPlayerFromId(source)

@@ -1,9 +1,5 @@
 lib.callback.register('Perri-VipWeapons:GetAcePermission', function()
-    if not IsPlayerAceAllowed(source, "Perri-VipWeapons") then
-        return false
-    end
-
-    return true
+    return IsPlayerAceAllowed(source, "Perri-VipWeapons")
 end)
 
 lib.callback.register('Perri-VipWeapons:GetPlayerWeapons', function(source, playerId)

@@ -87,33 +87,29 @@ lib.addCommand('givevipweapon', {
     local xPlayer = ESX.GetPlayerFromId(source)
     local target = args.target
     local weapon = args.weapon
-    
+        
     if not IsPlayerAceAllowed(source, "Perri-VipWeapons") then
-        xPlayer.showNotification(Config.Messages['not_ace_perms'])
+        xPlayer.showNotification("You do not have ace permission in server.cfg: ")
         return
     end
 
     if not target then
-        xPlayer.showNotification(Config.Messages['player_not_connected'])
+        xPlayer.showNotification("The player is not connected or the ID is invalid")
         return
     end
 
     if not weapon then
-        xPlayer.showNotification(Config.Messages['no_weapon_provided'])
+        xPlayer.showNotification("You haven't provided a weapon or it's invalid")
         return
     end
 
-    if not Config.VipWeapons[weapon] then
-        xPlayer.showNotification(Config.Messages['this_weapons_not_exist'])
-        return
-    end
     
     local xTarget = ESX.GetPlayerFromId(target)
     local currentVipData = xTarget.getMeta('VipWeapons')
 
     for _, existingWeapon in ipairs(currentVipData.weapons) do
         if existingWeapon == weapon then
-            xPlayer.showNotification(Config.Messages['player_already_has_weapon'])
+            xPlayer.showNotification("The player already has this weapon")
             return
         end
     end
@@ -132,8 +128,8 @@ lib.addCommand('givevipweapon', {
 
     sendToDiscord(65280, 'Perri VIP Weapons', message, '© Perri VIP Weapons - 2025')
     xTarget.setMeta('VipWeapons', currentVipData)
-    xTarget.showNotification(Config.Messages['weapon_assigned'] .. args.weapon)
-    xPlayer.showNotification(Config.Messages['weapon_given'] .. args.weapon .. Config.Messages['weapon_given_to'] .. args.target .. Config.Messages['operation_successful'])
+    xTarget.showNotification("Gived: " .. weapon)
+    xPlayer.showNotification("You added: " .. weapon .. " to " .. target .. " Successfully")
 end)
 
 lib.addCommand('removevipweapon', {
@@ -157,24 +153,20 @@ lib.addCommand('removevipweapon', {
     local weapon = args.weapon
 
     if not IsPlayerAceAllowed(source, "Perri-VipWeapons") then
-        xPlayer.showNotification(Config.Messages['not_ace_perms'])
+        xPlayer.showNotification("You do not have ace permission in server.cfg: ")
         return
     end
 
     if not target then
-        xPlayer.showNotification(Config.Messages['player_not_connected'])
+        xPlayer.showNotification("The player is not connected or the ID is invalid")
         return
     end
 
     if not weapon then
-        xPlayer.showNotification(Config.Messages['no_weapon_provided'])
+        xPlayer.showNotification("You haven't provided a weapon or it's invalid")
         return
     end
 
-    if not Config.VipWeapons[weapon] then
-        xPlayer.showNotification(Config.Messages['this_weapons_not_exist'])
-        return
-    end
 
     local xTarget = ESX.GetPlayerFromId(target)
     local currentVipData = xTarget.getMeta('VipWeapons')
@@ -189,7 +181,7 @@ lib.addCommand('removevipweapon', {
     end
 
     if not found then
-        xPlayer.showNotification(Config.Messages['player_doesnt_have_weapon'])
+        xPlayer.showNotification("The player does not have this VIP weapon.")
         return
     end
 
@@ -228,8 +220,9 @@ lib.addCommand('removevipweapon', {
 
     sendToDiscord(16711680, 'Perri VIP Weapons', message, '© Perri VIP Weapons - 2025')
 
-    xTarget.showNotification(Config.Messages['weapon_removed'] .. weapon)
-    xPlayer.showNotification(Config.Messages['weapon_removed_from'] .. weapon .. Config.Messages['weapon_given_to'] .. target .. Config.Messages['operation_successful'])
+
+    xTarget.showNotification("The VIP weapon has been removed from you: " .. weapon)
+    xPlayer.showNotification("You removed the VIP weapon: " .. weapon .. " to " .. target .. " Successfully")
 end)
 
 lib.addCommand('clearvipweapons', {
